@@ -1,4 +1,6 @@
-const endDate = "10 March 2024 07:25 PM";
+// const endDate = "10 March 2024 07:25 PM";
+var endDate = prompt("Please enter the end date and time (format: DD Month YYYY HH:MM AM/PM)", "10 March 2024 07:25 PM");
+
 document.getElementById("end-date").innerText = endDate;
 
 const inputs = document.querySelectorAll("input");
