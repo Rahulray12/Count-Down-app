@@ -4,7 +4,7 @@ var endDate = prompt("Please enter the end date and time (format: DD Month YYYY 
 document.getElementById("end-date").innerText = endDate;
 
 const inputs = document.querySelectorAll("input");
-
+const alarmSound = new Audio('Alarm.mp3');
 function clock() {
     const end = new Date(endDate);
     console.log(end);
@@ -21,6 +21,10 @@ function clock() {
     inputs[2].value = Math.floor(diff / 60) % 60; 
     //converting to seconds
     inputs[3].value= Math.floor(diff)%60;
+
+    if (diff <= 60 && alarmSound.paused) { // Check if the sound is paused
+        alarmSound.play();
+    }
 }
 
 clock();
